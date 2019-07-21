@@ -2,7 +2,7 @@
     <div class="todo-list-container">
         <p>Todo List</p>
         <div><i>Simple Todo List with adding and filter by diff status.</i></div>
-        <input type="text"><Button>Add</Button>
+        <input v-model="content" type="text"><Button @click="addItem">Add</Button>
         <div class="item-list-container">
             <div class="item-list" v-for="(item,index) in itemList" :key="index">
                 {{index}}.<checkbox></checkbox>{{item}}
@@ -15,7 +15,14 @@
 export default {
     data() { 
         return {
-            itemList:[123,456]
+            content:'',
+            itemList:[]
+        }
+    },
+    methods:{
+        addItem(){
+            this.itemList.push(this.content)
+            this.content=''
         }
     }
  }
