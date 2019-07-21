@@ -2,10 +2,12 @@
     <div class="todo-list-container">
         <p>Todo List</p>
         <div><i>Simple Todo List with adding and filter by diff status.</i></div>
-        <input v-model="content" type="text"><Button @click="addItem">Add</Button>
+        <div>
+            <input v-model="content" type="text"><Button @click="addItem">Add</Button>
+        </div>
         <div class="item-list-container">
             <div class="item-list" v-for="(item,index) in itemList" :key="index">
-                {{index}}.<checkbox></checkbox>{{item}}
+                {{index}}.<input type="checkBox">{{item}}
             </div>
         </div>
     </div>
