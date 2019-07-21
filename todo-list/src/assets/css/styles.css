@@ -1,0 +1,21 @@
+html{
+  background: gray;
+}
+p{
+    font-size: 25px;
+    font-weight: bold;
+}
+.todo-list-container{
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+}
+.item-list-container{
+    margin: 30px 0;
+    height: 200px;
+    width: 100%;
+    overflow: auto;
+}
