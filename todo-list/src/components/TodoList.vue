@@ -9,7 +9,6 @@
                 :type="$store.state.type"
             />
         </div>
-
     </div>
 </template>
 
@@ -20,10 +19,8 @@ export default {
     components: {
         TodoItem
     },
-    data() {
-        return {
-            
-        };
+    mounted() {
+        this.$store.dispatch('getTodoList')
     }
-}
+};
 </script>

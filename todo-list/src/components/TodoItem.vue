@@ -1,6 +1,6 @@
 <template>
     <div class="item-list">
-        <span v-if="(item.isSelected==false)&&(type=='All'||type=='Active')">
+        <span v-if="!item.isSelected&&(type=='All'||type=='Active')">
             {{index+1}}.
             <span class="color-zone" @dblclick="item.isEdited=true">
                 <input
@@ -10,12 +10,12 @@
                     @blur="item.isEdited=false"
                 />
                 <span v-if="!item.isEdited">
-                    <input type="checkbox" v-model="item.isSelected" />
+                    <input type="checkbox" v-model="item.isSelected" @click="$store.dispatch('updateTodo',item)" />
                     {{item.value}}
                 </span>
             </span>
         </span>
-        <del v-if="(item.isSelected==true)&&(type=='All'||type=='Complete')">
+        <del v-if="item.isSelected&&(type=='All'||type=='Complete')">
             {{index+1}}.
             <del class="color-zone" @dblclick="item.isEdited=true">
                 <input
@@ -25,11 +25,12 @@
                     @blur="item.isEdited=false"
                 />
                 <del v-if="!item.isEdited">
-                    <input type="checkbox" v-model="item.isSelected" />
+                    <input type="checkbox" v-model="item.isSelected" @click="$store.dispatch('updateTodo',item)" />
                     {{item.value}}
                 </del>
             </del>
         </del>
+        <button @click="$store.dispatch('deleteTodo',item.id)" class="delete-button">X</button>
     </div>
 </template>
 

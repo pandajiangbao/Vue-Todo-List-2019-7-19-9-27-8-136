@@ -15,12 +15,12 @@
 export default {
     data() {
         return {
-            content: { value: "", isSelected: false, isEdited: false },
+            content: { value: "", isSelected: false, isEdited: false }
         };
     },
     methods: {
         addItem() {
-            this.$store.commit("addItem", this.content);
+            this.$store.dispatch("addTodo", this.content)
             this.content = {
                 value: "",
                 isSelected: false,
