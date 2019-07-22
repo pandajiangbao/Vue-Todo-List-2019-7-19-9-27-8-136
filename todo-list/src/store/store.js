@@ -35,10 +35,9 @@ const store = new Vuex.Store({
                 })
         },
         updateTodo({ dispatch }, todo) {
-            console.log('todo :', todo);
             fly.put(`/todos/${todo.id}`, todo)
                 .then((response) => {
-                    console.log('response :', response);
+                    console.log('response :', response.data);
                     dispatch('getTodoList')
                 })
                 .catch((error) => {
