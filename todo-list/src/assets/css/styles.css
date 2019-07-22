@@ -15,7 +15,7 @@ button:hover{
 button:focus{
     background: rgb(226, 119, 191);
 }
-.todo-list-container{
+#app{
     width: 500px;
     height: 300px;
     margin: 0 auto;
@@ -53,4 +53,7 @@ button:focus{
 }
 .item-list-button-container button{
     margin: 0 55px;
+}
+.delete-line{
+    text-decoration-line: line-through;
 }

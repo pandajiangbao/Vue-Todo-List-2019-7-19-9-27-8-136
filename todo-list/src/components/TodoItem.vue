@@ -17,18 +17,18 @@
         </span>
         <del v-if="(item.isSelected==true)&&(type=='All'||type=='Complete')">
             {{index+1}}.
-            <span class="color-zone" @dblclick="item.isEdited=true">
+            <del class="color-zone" @dblclick="item.isEdited=true">
                 <input
                     type="text"
                     v-if="item.isEdited"
                     v-model="item.value"
                     @blur="item.isEdited=false"
                 />
-                <span v-if="!item.isEdited">
+                <del v-if="!item.isEdited">
                     <input type="checkbox" v-model="item.isSelected" />
                     {{item.value}}
-                </span>
-            </span>
+                </del>
+            </del>
         </del>
     </div>
 </template>
