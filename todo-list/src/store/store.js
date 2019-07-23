@@ -17,41 +17,24 @@ const store = new Vuex.Store({
     },
     actions: {
         getTodoList({ commit }) {
-            fly.get('/todos')
-                .then((response) => {
-                    commit('getTodoList', response.data)
-                })
-                .catch((error) => {
-                    console.error(error)
-                })
+            fly.get('/todos').then((response) => {
+                commit('getTodoList', response.data)
+            })
         },
         addTodo({ dispatch }, todo) {
-            fly.post('/todos', todo)
-                .then((response) => {
-                    dispatch('getTodoList')
-                })
-                .catch((error) => {
-                    console.error(error)
-                })
+            fly.post('/todos', todo).then(() => {
+                dispatch('getTodoList')
+            })
         },
         updateTodo({ dispatch }, todo) {
-            fly.put(`/todos/${todo.id}`, todo)
-                .then((response) => {
-                    console.log('response :', response.data);
-                    dispatch('getTodoList')
-                })
-                .catch((error) => {
-                    console.error(error)
-                })
+            fly.put(`/todos/${todo.id}`, todo).then(() => {
+                dispatch('getTodoList')
+            })
         },
         deleteTodo({ dispatch }, id) {
-            fly.delete(`/todos/${id}`)
-                .then((response) => {
-                    dispatch('getTodoList')
-                })
-                .catch((error) => {
-                    console.error(error)
-                })
+            fly.delete(`/todos/${id}`).then(() => {
+                dispatch('getTodoList')
+            })
         },
     }
 })

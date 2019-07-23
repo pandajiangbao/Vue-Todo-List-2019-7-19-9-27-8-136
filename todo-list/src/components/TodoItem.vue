@@ -8,6 +8,7 @@
                     v-if="item.isEdited"
                     v-model="item.value"
                     ref="temp"
+                    autofocus
                     @keyup.enter="$store.dispatch('updateTodo',item)"
                     @blur="item.isEdited=false"
                 />
@@ -26,6 +27,7 @@
                     v-if="item.isEdited"
                     v-model="item.value"
                     ref="temp"
+                    autofocus
                     @keyup.enter="$store.dispatch('updateTodo',item)"
                     @blur="item.isEdited=false"
                 />
@@ -49,7 +51,6 @@ export default {
         },
         doubleClickEdit(item){
             item.isEdited=true
-            console.log('this.$refs :', this.$refs.input);
             this.$refs.temp.focus()
         }
     },
