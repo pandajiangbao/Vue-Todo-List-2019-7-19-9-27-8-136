@@ -20,12 +20,14 @@ export default {
     },
     methods: {
         addItem() {
+            if(this.content.value!=""){
             this.$store.dispatch("addTodo", this.content)
             this.content = {
                 value: "",
                 isSelected: false,
                 isEdited: false
-            };
+                }
+            }
         }
     }
 };

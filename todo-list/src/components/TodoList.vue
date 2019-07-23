@@ -1,26 +1,26 @@
 <template>
     <div class="todo-list-container">
-        <div class="item-list-container">
-            <todo-item
-                v-for="(item,index) in $store.state.itemList"
-                :key="index"
-                :index="index"
-                :item="item"
-                :type="$store.state.type"
-            />
-        </div>
+        <Header />
+        <TodoItems />
+        <Footer />
     </div>
 </template>
 
 <script>
-import TodoItem from "./TodoItem.vue";
-
+import Header from "./Header.vue";
+import TodoItems from "./TodoItems.vue";
+import Footer from "./Footer.vue";
 export default {
     components: {
-        TodoItem
+        Header,
+        TodoItems,
+        Footer
     },
-    mounted() {
-        this.$store.dispatch('getTodoList')
+    data() {
+        return {};
     }
 };
 </script>
+
+<style lang="" scoped>
+</style>

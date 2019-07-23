@@ -1,0 +1,19 @@
+
+GET http://localhost:8080/todos
+###
+POST http://localhost:8080/todos
+Content-Type: application/json
+
+{
+    "value":"aaa"
+}
+###
+PUT http://localhost:8080/todos/1 
+Content-Type: application/json
+
+{
+    "value":"panda",
+    "isSelected":true
+}
+###
+DELETE  http://localhost:8080/todos/1

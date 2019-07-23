@@ -2,12 +2,16 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { fly } from '../main'
 Vue.use(Vuex)
-const store = new Vuex.Store({
+export default new Vuex.Store({
     state: {
+        name:'',
         itemList: [],
         type: "All"
     },
     mutations: {
+        setName(state, name) {
+            state.name = name
+        },
         getTodoList(state, todoList) {
             state.itemList = todoList
         },
@@ -25,6 +29,10 @@ const store = new Vuex.Store({
             fly.post('/todos', todo).then(() => {
                 dispatch('getTodoList')
             })
+            .catch((response)=>{
+                console.log('response :', response);
+                alert(response.response.data)
+            })
         },
         updateTodo({ dispatch }, todo) {
             fly.put(`/todos/${todo.id}`, todo).then(() => {
@@ -38,4 +46,3 @@ const store = new Vuex.Store({
         },
     }
 })
-export default store
