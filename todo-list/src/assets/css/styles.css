@@ -1,19 +1,11 @@
-html{
-  background: gray;
+.main{
+    width: 300px;
+    margin: 0 auto;
 }
-p{
+.todo-list-title{
     font-size: 20px;
-    font-weight: bold;
     margin: 10px 0;
-}
-button{
-    background: pink;
-}
-button:hover{
-    background: rgb(226, 119, 191);
-}
-button:focus{
-    background: rgb(226, 119, 191);
+    font-weight: bold;
 }
 .delete-button{
     text-align: right;
@@ -32,12 +24,13 @@ button:focus{
     float: right;
 }
 .todo-list-container{
-    width: 500px;
-    height: 300px;
-    margin: 0 auto;
+    width: 550px;
+    height: 350px;
+    margin: 30px auto;
     padding: 20px;
     background-color: white;
     border-radius: 15px;
+    border: 1px solid black;
 }
 .item-list-input-container {
     margin-top: 10px;
@@ -68,7 +61,7 @@ button:focus{
     background: pink;    
 }
 .item-list-button-container button{
-    margin: 0 55px;
+    margin: 5px 40px;
 }
 .delete-line{
     text-decoration-line: line-through;

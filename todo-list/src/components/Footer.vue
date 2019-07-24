@@ -1,8 +1,8 @@
 <template>
     <div class="item-list-button-container">
-        <button @click="$store.commit('changeType','All')">All</button>
-        <button @click="$store.commit('changeType','Active')">Active</button>
-        <button @click="$store.commit('changeType','Complete')">Complete</button>
+        <a-button type="danger" @click="$store.commit('changeType','All')">All</a-button>
+        <a-button type="danger" @click="$store.commit('changeType','Active')">Active</a-button>
+        <a-button type="danger" @click="$store.commit('changeType','Complete')">Complete</a-button>
     </div>
 </template>
 

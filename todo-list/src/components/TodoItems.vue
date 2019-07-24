@@ -20,7 +20,6 @@ export default {
         TodoItem
     },
     mounted() {
-        console.log('this :', this);
         this.$store.dispatch('getTodoList')
     }
 };

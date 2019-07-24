@@ -30,7 +30,6 @@ export default new Vuex.Store({
                 dispatch('getTodoList')
             })
             .catch((response)=>{
-                console.log('response :', response);
                 alert(response.response.data)
             })
         },

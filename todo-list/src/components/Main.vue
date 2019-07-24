@@ -1,15 +1,18 @@
 <template>
     <div class="main">
-        <button @click="toHome">开始使用</button>
+        <a-button type="danger" @click="toHome">开始使用</a-button>
         <br />
-        <input type="text" placeholder="请输入姓名" v-model="name" />
+        <a-input type="text" placeholder="请输入姓名" v-model="name" />
+        <a-modal title="温馨提示" v-model="isAlerted" @ok="isAlerted=false">输入姓名不能为空</a-modal>
     </div>
 </template>
 
 <script>
 export default {
     data() {
-        return {};
+        return {
+            isAlerted:false
+        };
     },
     computed: {
         name: {
@@ -23,7 +26,10 @@ export default {
     },
     methods: {
         toHome() {
-            this.$router.push('/home/todolist')
+            if(this.name===""){
+                this.isAlerted=true
+            }
+            else this.$router.push('/home/todolist')
         }
     }
 };

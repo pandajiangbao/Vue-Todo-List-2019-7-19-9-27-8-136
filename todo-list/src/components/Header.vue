@@ -1,12 +1,12 @@
 <template>
     <div class>
-        <p>Todo List</p>
+        <p class="todo-list-title">Todo List</p>
         <div>
             <i>Simple Todo List with adding and filter by diff isSelected.</i>
         </div>
         <div class="item-list-input-container">
-            <input v-model="content.value" type="text" @keyup.enter="addItem" />
-            <Button @click="addItem">Add</Button>
+            <a-input v-model="content.value" type="text" @keyup.enter="addItem" />
+            <a-button type="danger" @click="addItem">Add</a-button>
         </div>
     </div>
 </template>
@@ -15,7 +15,9 @@
 export default {
     data() {
         return {
-            content: { value: "", isSelected: false, isEdited: false }
+            content: { value: "", isSelected: false, isEdited: false },
+            msg:'',
+            isException:false
         };
     },
     methods: {
